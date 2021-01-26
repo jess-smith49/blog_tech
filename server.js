@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const exhbs = require('express-handlebars');
 
 const app = express();
 const PORT = process.env.PORT || 3001
@@ -18,6 +19,8 @@ const sess = {
 };
 
 app.use(session(sess));
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
