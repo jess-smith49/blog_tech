@@ -1,9 +1,8 @@
-async function editPostHandler(e){
+async function createCommentHandler(e){
     e.preventDefault();
 
-    const post_title = document.querySelector().value.trim();
-    const post_body = document.querySelector().value.trim();
-    const id = window.location.toString().split('/')[
+    const comment_text = document.querySelector().value.trim();
+    const post_id = window.location.toString().split('/')[
         window.location.toString.split('/').length -1
     ];
 
@@ -27,4 +26,4 @@ async function editPostHandler(e){
     }
 };
 
-document.querySelector().addEventListener('submit', editPostHandler)
+document.querySelector().addEventListener('submit', createCommentHandler);
