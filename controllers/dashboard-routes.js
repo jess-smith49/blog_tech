@@ -9,15 +9,34 @@ router.get('/', withAuth, (req, res) => {
         where: {
             user_id: req.session.user_id
         },
+        attributes: [
+            'id',
+            'post_title',
+            'post_body'
+        ],
+        include: [
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
         
     })
-})
+    .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({plain: true}));
+        res.render('dashboard', {posts, loggedIn: true});
+    })
+    .catch(err => {
+        res.status(500).json(err);
+    })
+});
 
 
-//EDIT A POST
-router.get('/edit:id', withAuth, (req,res) => {
-    
-})
-
-//DELETE A POST
-router.delete('/delete:id')
