@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
     })
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({plain: true}));
-        res.render('main', {
+        res.render('homepage', {
             posts,
             loggedIn: req.session.loggedIn
         })
@@ -89,5 +89,13 @@ router.get('/login', (req, res) => {
 
     res.render('login');
 });
+
+router.get('/sign-up', (req,rest) => {
+    if(req.secure.loggedIn){
+        res.redirect('/');
+        return;
+    }
+    res.render('sign-up');
+})
 
 module.exports = router;
