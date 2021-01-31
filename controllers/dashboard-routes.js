@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const withAuth = require('../utils/auth');
 const {Post, User, Comment} = require('../models');
 
 //posts 
@@ -40,7 +41,7 @@ router.get('/', withAuth, (req, res) => {
 });
 
 
-router.get('/edit/:id', withAtuh, (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: [
             'id',

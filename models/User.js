@@ -33,7 +33,9 @@ User.init(
                 len: [4]
             }
         },
-        
+    },
+
+    {
         //Password Hashing
         hooks: {
             async beforeCreate(newUser){
@@ -52,6 +54,7 @@ User.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'user'
+        
     }
 );
 

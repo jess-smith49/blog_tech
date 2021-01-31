@@ -31,8 +31,11 @@ Post.init(
             }
         }
     },
+    {
+        sequelize,
+    }
 
-    sequelize,
+    
 );
 
 module.exports = Post;
