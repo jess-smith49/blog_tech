@@ -90,7 +90,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/sign-up', (req,rest) => {
+router.get('/sign-up', (req,res) => {
     if(req.secure.loggedIn){
         res.redirect('/');
         return;
