@@ -16,6 +16,7 @@ async function signupFormHandler(e){
 
         if (response.ok){
             document.location.replace('/dashboard/');
+
         }
         else{
             alert(response.statusText);
