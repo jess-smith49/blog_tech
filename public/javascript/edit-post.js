@@ -1,11 +1,11 @@
 async function editPostHandler(e){
     e.preventDefault();
 
-    const post_title = document.querySelector().value.trim();
+    const post_title = document.querySelector('input[name="post-title"]').value.trim();
     const post_body = document.querySelector().value.trim();
     
 
-    const response = await fetch ()
+    
 };
 
-document.querySelector().addEventListener('submit', editPostHandler)
+document.querySelector('.edit-post-form'.addEventListener('submit', editPostHandler));

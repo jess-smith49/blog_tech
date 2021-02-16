@@ -1,8 +1,8 @@
 async function addPostHandler(e){
     e.preventDefault();
 
-    const post_title = document.querySelector().value.trim()
-    const post_body = document.querySelector().value.trim();
+    const post_title = document.querySelector('input[name="post-title"]').value.trim()
+    const post_body = document.querySelector().value.trim('input[name="post-body"]');
 
     const response = await fetch('/api/posts', {
         method: 'POST',
@@ -22,4 +22,4 @@ async function addPostHandler(e){
     }
 };
 
-document.querySelector().addEventListener('submit', addPostHandler);
+document.querySelector('.add-post').addEventListener('submit', addPostHandler);

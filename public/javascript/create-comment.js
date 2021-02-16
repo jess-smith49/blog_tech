@@ -1,7 +1,7 @@
 async function createCommentHandler(e){
     e.preventDefault();
 
-    const comment_text = document.querySelector().value.trim();
+    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
     const post_id = window.location.toString().split('/')[
         window.location.toString.split('/').length -1
     ];
@@ -26,4 +26,4 @@ async function createCommentHandler(e){
     }
 };
 
-document.querySelector().addEventListener('submit', createCommentHandler);
+document.querySelector('.comment-form').addEventListener('submit', createCommentHandler);
